@@ -651,10 +651,9 @@ function closePwModal(e) {
 
 // ============================================================
 //  CONFIG & STATE
-//  scriptUrl: ใส่ URL Apps Script ตรงๆ (เวอร์ชัน GitHub Pages ไม่ผ่าน template)
-//  ถ้า deploy Apps Script ใหม่แล้ว URL เปลี่ยน ให้แก้บรรทัดล่างนี้
+//  scriptUrl ถูก inject มาจาก Apps Script (<?= scriptUrl ?>)
 // ============================================================
-const scriptUrl  = 'https://script.google.com/macros/s/AKfycbx1yUYxuSgF2xsOZF872ohwjIvD56NQwbZ4BXizSG-dm00Rypu6nVO_YwE-BZJ2F6X4/exec';
+const scriptUrl  = '<?= scriptUrl ?>';
 let currentData  = {};
 let sortKey      = 'name', sortDir = 'asc';
 

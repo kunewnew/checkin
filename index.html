@@ -651,10 +651,9 @@ function closePwModal(e) {
 
 // ============================================================
 //  CONFIG & STATE
-//  scriptUrl: ใส่ URL Apps Script ตรงๆ (เวอร์ชัน GitHub Pages ไม่ผ่าน template)
-//  ถ้า deploy Apps Script ใหม่แล้ว URL เปลี่ยน ให้แก้บรรทัดล่างนี้
+//  scriptUrl ถูก inject มาจาก Apps Script (<?= scriptUrl ?>)
 // ============================================================
-const scriptUrl  = 'https://script.google.com/macros/s/AKfycbx1yUYxuSgF2xsOZF872ohwjIvD56NQwbZ4BXizSG-dm00Rypu6nVO_YwE-BZJ2F6X4/exec';
+const scriptUrl  = '<?= scriptUrl ?>';
 let currentData  = {};
 let sortKey      = 'name', sortDir = 'asc';
 
@@ -1397,7 +1396,9 @@ function init() {
 // เพิ่มเว็บใหม่: ก๊อปบรรทัด {icon:'..',label:'..',url:'..'}, แล้ววางต่อท้าย
 const SITE_LINKS = [
   {icon:'⚙️', label:'เช็คชื่อเตรียมวิศวะ (เว็บนี้)', url:''},
-  {icon:'📚', label:'เช็คชื่อรายวิชา (ครูทุกคน)', url:'https://kunewnew.github.io/checkinSD/'}, {icon:'🦆', label:'สุ่มเลขที่ เป็ดแข่งวิ่ง', url:'https://kunewnew.github.io/duckrace/'},
+  {icon:'📚', label:'เช็คชื่อรายวิชา (ครูทุกคน)', url:'https://kunewnew.github.io/checkinSD/'},
+  {icon:'🦆', label:'สุ่มเลขที่ เป็ดแข่งวิ่ง', url:'https://kunewnew.github.io/duckrace/'},
+  {icon:'📝', label:'ติดตามการส่งงาน', url:'https://kunewnew.github.io/checktest/'},
 ];
 function renderDrawerLinks(){
   document.getElementById('drawer-links').innerHTML = SITE_LINKS.map(l =>
